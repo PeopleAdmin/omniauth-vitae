@@ -1,6 +1,7 @@
 # Omniauth::Vitae
 
-TODO: Write a gem description
+An OmniAuth strategy for authenticating with
+[Vitae](https://chroniclevitae.com) via OAuth2.
 
 ## Installation
 
@@ -12,18 +13,13 @@ And then execute:
 
     $ bundle
 
-Or install it yourself as:
-
-    $ gem install omniauth-vitae
-
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+use OmniAuth::Builder do
+  vitae_app_id = ENV.fetch 'VITAE_OAUTH_APP_ID'
+  vitae_secret = ENV.fetch 'VITAE_OAUTH_SECRET'
+  provider :vitae, vitae_app_id, vitae_secret
+end
+```
 
-## Contributing
-
-1. Fork it ( http://github.com/<my-github-username>/omniauth-vitae/fork )
-2. Create your feature branch (`git checkout -b my-new-feature`)
-3. Commit your changes (`git commit -am 'Add some feature'`)
-4. Push to the branch (`git push origin my-new-feature`)
-5. Create new Pull Request

@@ -1,16 +1,16 @@
 require 'spec_helper'
 
 describe OmniAuth::Strategies::Vitae do
-  let(:access_token) { stub('AccessToken', :options => {}) }
-  let(:parsed_response) { stub('ParsedResponse') }
-  let(:response) { stub('Response', :parsed => parsed_response) }
+  let(:access_token) { double('AccessToken', :options => {}) }
+  let(:parsed_response) { double('ParsedResponse') }
+  let(:response) { double('Response', :parsed => parsed_response) }
 
   subject do
     OmniAuth::Strategies::Vitae.new({})
   end
 
   before(:each) do
-    subject.stub!(:access_token).and_return(access_token)
+    subject.stub(:access_token).and_return(access_token)
   end
 
   context "client options" do

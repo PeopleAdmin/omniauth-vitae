@@ -13,3 +13,6 @@ rvm:
   - jruby-head
   - rbx
   - ruby-head
+script:
+  - bundle exec rspec
+  - bundle exec rubocop

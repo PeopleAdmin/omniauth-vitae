@@ -15,18 +15,15 @@ describe OmniAuth::Strategies::Vitae do
 
   context 'client options' do
     it 'should have correct site' do
-      subject.options.client_options.site
-        .should eq('https://chroniclevitae.com')
+      subject.options.client_options.site.should eq('https://chroniclevitae.com')
     end
 
     it 'should have correct authorize url' do
-      subject.options.client_options.authorize_url
-        .should eq('https://chroniclevitae.com/oauth/authorize')
+      subject.options.client_options.authorize_url.should eq('https://chroniclevitae.com/oauth/authorize')
     end
 
     it 'should have correct token url' do
-      subject.options.client_options.token_url
-        .should eq('https://chroniclevitae.com/oauth/token')
+      subject.options.client_options.token_url.should eq('https://chroniclevitae.com/oauth/token')
     end
   end
 end

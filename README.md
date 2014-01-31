@@ -1,5 +1,7 @@
 # Omniauth::Vitae
 
+[![Build Status](https://travis-ci.org/PeopleAdmin/omniauth-vitae)](https://travis-ci.org/PeopleAdmin/omniauth-vitae)
+
 An OmniAuth strategy for authenticating with
 [Vitae](https://chroniclevitae.com) via OAuth2.
 

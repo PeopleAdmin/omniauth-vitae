@@ -5,6 +5,7 @@ module OmniAuth
     # Authenticate against the Vitae API.
     class Vitae < OmniAuth::Strategies::OAuth2
       option :connection_modifier, lambda { |c| }
+      option :force_ssl, false
 
       option :client_options,
              :site          => 'https://chroniclevitae.com',
@@ -32,6 +33,10 @@ module OmniAuth
                            :headers => { 'Accept' => 'application/json' }).
             parsed.fetch('results').first
         end
+      end
+
+      def ssl?
+        options.force_ssl || super
       end
 
       # Allow users to directly modify the HTTP connection prior to use.

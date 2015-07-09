@@ -29,9 +29,10 @@ module OmniAuth
       def raw_info
         @raw_info ||= begin
           modify_connection
-          access_token.get('/api/users/self',
-                           :headers => { 'Accept' => 'application/json' }).
-            parsed.fetch('results').first
+          access_token.get('/api/users/self', :headers => {
+            'Accept' => 'application/json',
+            'Accept-Encoding' => 'compress'
+          }).parsed.fetch('results').first
         end
       end
 
